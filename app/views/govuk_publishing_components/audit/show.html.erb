@@ -2,6 +2,8 @@
 
 <%= render 'govuk_publishing_components/components/title', title: "Components audit", margin_top: 0; %>
 
+<%= @application_dirs %>
+
 <% applications = capture do %>
   <%= render "applications" %>
 <% end %>
