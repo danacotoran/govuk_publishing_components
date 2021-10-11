@@ -29,10 +29,13 @@ module GovukPublishingComponents
       ].sort
       application_dirs = [GovukPublishingComponents::ApplicationHelper.get_application_name_from_path(Rails.root)] unless ENV["MAIN_COMPONENT_GUIDE"]
 
-      @application_dirs = application_dirs
-      
       gem_path = Gem.loaded_specs["govuk_publishing_components"].full_gem_path
       gem_path = Dir.pwd if ENV["MAIN_COMPONENT_GUIDE"]
+
+      @application_dirs = application_dirs
+      @gem_path = gem_path
+      @path = File.expand_path("..", gem_path)
+      @dir = Dir.pwd
 
       components = AuditComponents.new(gem_path, false)
       applications = analyse_applications(File.expand_path("..", gem_path), application_dirs)
