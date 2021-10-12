@@ -33,10 +33,13 @@ module GovukPublishingComponents
       gem_path = Dir.pwd if ENV["MAIN_COMPONENT_GUIDE"]
       host_dir = File.expand_path("..")
 
+      @in_application = false
+      @in_application = true if !gem_path.to_s.include? host_dir.to_s
+
       @application_dirs = application_dirs
       @gem_path = gem_path
       @path = File.expand_path("..", gem_path)
-      @dir = Dir.pwd
+      @host_dir = host_dir
 
       components = AuditComponents.new(gem_path, false)
       applications = analyse_applications(host_dir, application_dirs)
@@ -59,8 +62,8 @@ module GovukPublishingComponents
         results << app.data
       end
 
-      @applications_found = false
-      @applications_found = true if applications_found > 1
+      @other_applications = false
+      @other_applications = true if applications_found > 1
 
       results
     end

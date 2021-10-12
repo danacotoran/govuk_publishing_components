@@ -5,7 +5,12 @@
 <%= @application_dirs %><br/>
 <%= @gem_path %><br/>
 <%= @path %><br/>
-<%= @dir %><br/>
+<%= @host_dir %><br/>
+
+<p class="govuk-body">
+  @in_application: <%= @in_application %><br/>
+  @other_applications: <%= @other_applications %>
+</p>
 
 <% applications = capture do %>
   <%= render "applications" %>
