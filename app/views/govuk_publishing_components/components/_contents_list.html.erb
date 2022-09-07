@@ -1,4 +1,8 @@
 <%-
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("contents-list")
+  end
+
   cl_helper = GovukPublishingComponents::Presenters::ContentsListHelper.new(local_assigns)
   underline_links ||= false
   aria_label ||= t("components.contents_list.contents")

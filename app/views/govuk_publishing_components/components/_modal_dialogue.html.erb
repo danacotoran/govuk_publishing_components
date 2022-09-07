@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("modal-dialogue")
+  end
+
   id ||= "modal-dialogue-#{SecureRandom.hex(4)}"
   wide ||= false
   data_attributes = {}

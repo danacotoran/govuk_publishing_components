@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("lead-paragraph")
+  end
+
   text ||= ""
   inverse ||= false
   shared_helper = GovukPublishingComponents::Presenters::SharedHelper.new(local_assigns)

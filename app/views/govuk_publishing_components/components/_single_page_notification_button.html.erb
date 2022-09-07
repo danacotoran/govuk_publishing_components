@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("single-page-notification-button")
+  end
+
   component_helper = GovukPublishingComponents::Presenters::SinglePageNotificationButtonHelper.new(local_assigns)
   shared_helper = GovukPublishingComponents::Presenters::SharedHelper.new(local_assigns)
 

@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("step-by-step-nav-related")
+  end
+
   links ||= []
   pretitle ||= t("components.step_by_step_nav_related.part_of")
   always_display_as_list ||= false

@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("cards")
+  end
+
   heading ||= nil
   items ||= nil
   sub_heading_level ||= 3

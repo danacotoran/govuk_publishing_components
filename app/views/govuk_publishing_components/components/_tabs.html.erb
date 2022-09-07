@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("tabs")
+  end
+
   tabs ||= []
   panel_border ||= true unless panel_border == false
   panel_css_classes = %w(govuk-tabs__panel)

@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("skip-link")
+  end
+
   href ||= '#main-content'
   text ||= t('components.skip_link.text')
 %>

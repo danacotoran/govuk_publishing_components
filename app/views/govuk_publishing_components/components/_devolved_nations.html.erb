@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("devolved-nations")
+  end
+
   shared_helper = GovukPublishingComponents::Presenters::SharedHelper.new(local_assigns)
   devolved_nations_helper = GovukPublishingComponents::Presenters::DevolvedNationsHelper.new(local_assigns)
 

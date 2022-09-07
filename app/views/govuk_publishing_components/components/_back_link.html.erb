@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("back-link")
+  end
+
   text ||= t('components.back_link.back')
   data_attributes ||= nil
 %>

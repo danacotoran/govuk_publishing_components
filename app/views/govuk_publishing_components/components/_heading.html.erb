@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("heading")
+  end
+
   brand ||= false
   lang = local_assigns[:lang].presence
 

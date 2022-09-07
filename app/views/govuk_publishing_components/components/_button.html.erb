@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("button")
+  end
+
   # button_helper.css_classes generates "gem-c-button"
   shared_helper = GovukPublishingComponents::Presenters::SharedHelper.new(local_assigns)
   local_assigns[:classes] = shared_helper.classes

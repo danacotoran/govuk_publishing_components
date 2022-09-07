@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("select")
+  end
+
   # select_helper.css_classes generates "gem-c-select"
   id ||= false
   label ||= false

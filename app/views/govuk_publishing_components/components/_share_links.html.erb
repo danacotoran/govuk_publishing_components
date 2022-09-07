@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("share-links")
+  end
+
   links ||= []
   title ||= false
   track_as_sharing ||= false

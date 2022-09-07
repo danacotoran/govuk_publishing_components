@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("error-summary")
+  end
+
   id ||= "error-summary-#{SecureRandom.hex(4)}"
   title ||= false
   description ||= false

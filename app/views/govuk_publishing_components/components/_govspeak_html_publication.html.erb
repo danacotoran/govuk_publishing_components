@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("govspeak-html-publication")
+  end
+
   govspeak_locals = {}
   govspeak_locals[:content] = local_assigns.fetch(:content) if local_assigns.include?(:content)
   govspeak_locals[:direction] = local_assigns.fetch(:direction) if local_assigns.include?(:direction)

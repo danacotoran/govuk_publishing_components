@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("step-by-step-nav-header")
+  end
+
   title ||= false
   path ||= false
   breadcrumbs = [
@@ -20,7 +24,7 @@
   end
 
   shared_helper = GovukPublishingComponents::Presenters::SharedHelper.new(local_assigns)
-  classes = %w(gem-c-step-nav-header)
+  classes = %w[gem-c-step-nav-header]
   classes << shared_helper.get_margin_bottom if local_assigns[:margin_bottom]
 %>
 <% if title %>

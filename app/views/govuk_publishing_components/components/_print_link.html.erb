@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("print-link")
+  end
+
   text ||= t('components.print_link.text')
   href ||= nil
   data_attributes ||= {}

@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("emergency-banner")
+  end
+
   heading ||= ""
   short_description ||= nil
   link ||= nil

@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("character-count")
+  end
+
   id ||= "character-count-#{SecureRandom.hex(4)}"
   maxlength ||= nil
   maxwords ||= nil

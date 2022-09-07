@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("search")
+  end
+
   shared_helper = GovukPublishingComponents::Presenters::SharedHelper.new(local_assigns)
   heading_helper = GovukPublishingComponents::Presenters::HeadingHelper.new(local_assigns)
 

@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("summary-list")
+  end
+
   local_assigns[:heading_level] ||= 3
   shared_helper = GovukPublishingComponents::Presenters::SharedHelper.new(local_assigns)
   heading_size = "m" unless shared_helper.valid_heading_size?(heading_size)

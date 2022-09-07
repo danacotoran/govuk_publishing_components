@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("notice")
+  end
+
   title ||= false
   description_text ||= false
   description_govspeak ||= false

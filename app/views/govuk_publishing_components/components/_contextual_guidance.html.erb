@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("contextual-guidance")
+  end
+
   id ||= nil
   title ||= nil
   content ||= nil

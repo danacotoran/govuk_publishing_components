@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("panel")
+  end
+
   description ||= false
   prepend ||= false
   append ||= false

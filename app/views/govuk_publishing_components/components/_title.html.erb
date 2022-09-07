@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("title")
+  end
+
   average_title_length ||= false
 
   context ||= false

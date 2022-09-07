@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("success-alert")
+  end
+
   description ||= nil
   title_id ||= "govuk-notification-banner-title-#{SecureRandom.hex(4)}"
   shared_helper = GovukPublishingComponents::Presenters::SharedHelper.new(local_assigns)

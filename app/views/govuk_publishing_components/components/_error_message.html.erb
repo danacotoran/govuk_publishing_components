@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("error-message")
+  end
+
   id ||= "error-message-#{SecureRandom.hex(4)}"
   classes ||= ''
   css_classes = %w( gem-c-error-message govuk-error-message )

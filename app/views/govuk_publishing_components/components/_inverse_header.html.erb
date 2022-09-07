@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("inverse-header")
+  end
+
   css_classes = []
   css_classes << " gem-c-inverse-header--full-width" if local_assigns[:full_width]
   css_classes << " gem-c-inverse-header--padding-top" unless local_assigns[:padding_top].eql?(false)

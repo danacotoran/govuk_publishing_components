@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("textarea")
+  end
+
   id ||= "textarea-#{SecureRandom.hex(4)}"
   value ||= nil
   rows ||= 5

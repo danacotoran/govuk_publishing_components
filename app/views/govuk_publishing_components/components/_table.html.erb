@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("table")
+  end
+
   caption ||= nil
   head ||= []
   rows ||= []
@@ -16,7 +20,7 @@
   <%= GovukPublishingComponents::AppHelpers::TableHelper.helper(self, caption, {
       sortable: sortable,
       filterable: filterable,
-      caption_classes: caption_classes, 
+      caption_classes: caption_classes,
       table_id: table_id
     }) do |t| %>
 

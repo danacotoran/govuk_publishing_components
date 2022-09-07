@@ -1,4 +1,8 @@
 <%
+  if defined? @individual_stylesheets
+    @individual_stylesheets.add_gem_component("cookie-banner")
+  end
+
   id ||= 'global-cookie-message'
   title ||= t("components.cookie_banner.title")
   text ||= t("components.cookie_banner.text")
