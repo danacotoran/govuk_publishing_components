@@ -14,9 +14,12 @@ describe('Intervention banner component', function () {
     document.body.appendChild(container)
     var element = document.querySelector('[data-module="intervention"]')
     new GOVUK.Modules.Intervention(element).init()
+
+    window.GOVUK.setCookie('cookies_policy', '{"essential":true,"settings":true,"usage":true,"campaigns":true}')
   })
 
   afterEach(function () {
+    GOVUK.deleteCookie('test-hide-intervention')
     document.body.removeChild(container)
   })
 
@@ -27,6 +30,20 @@ describe('Intervention banner component', function () {
       close.click()
 
       expect(banner).toBeHidden()
+    })
+
+    it('sets a cookie value', function () {
+      spyOn(GOVUK, 'cookie').and.callThrough()
+      var close = document.querySelector('.gem-c-intervention__dismiss-link')
+      close.click()
+
+      expect(GOVUK.cookie).toHaveBeenCalled()
+    })
+  })
+
+  describe('cookies are already set', function () {
+    xit('', function () {
+
     })
   })
 })

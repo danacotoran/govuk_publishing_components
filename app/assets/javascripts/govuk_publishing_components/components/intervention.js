@@ -6,6 +6,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
     this.$module = $module
     this.$banner = this.$module.querySelector('.gem-c-intervention')
     this.$closeLink = this.$module.querySelector('.gem-c-intervention__dismiss-link')
+    this.$bannerName = this.$module.getAttribute('data-intervention-name')
   }
 
   Intervention.prototype.init = function () {
@@ -19,6 +20,11 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
   Intervention.prototype.handleClose = function (event) {
     if (event) {
       event.preventDefault()
+    }
+
+    if (GOVUK.getCookie('cookies_policy')) {
+
+      // GOVUK.cookie(this.$bannerName, 'true')
     }
 
     this.$module.style.display = 'none'
