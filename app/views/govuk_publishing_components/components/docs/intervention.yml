@@ -35,6 +35,7 @@ examples:
 
   with_suggestion_link_only:
     data:
+      suggestion_text: You should renew your permit every 6 months.
       suggestion_link_text: You can now apply for a permit online.
       suggestion_link_url: /permit
 
@@ -43,6 +44,7 @@ examples:
       This example is for when we want to hide by default and display to the user based on some logic,
       either in the backend or with Javascript.
     data:
+      suggestion_text: You should renew your permit every 6 months.
       suggestion_link_text: You may be invited to fill in a questionnaire
       suggestion_link_url: /questionnaire
       hide: true
@@ -54,6 +56,7 @@ examples:
       Link text should tell the user that the link opens in a new tab.
       Note: "(opens in a new tab)" is added to link text if the phrase isn't included.
     data:
+      suggestion_text: You should renew your permit every 6 months.
       suggestion_link_text: You can now apply for a permit online
       suggestion_link_url: www.google.com/permit
       new_tab: true

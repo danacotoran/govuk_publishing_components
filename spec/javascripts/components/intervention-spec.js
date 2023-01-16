@@ -38,6 +38,8 @@ describe('Intervention banner component', function () {
       close.click()
 
       expect(GOVUK.cookie).toHaveBeenCalled()
+      var bannerCookie = GOVUK.cookie('test-intervention-name')
+      expect(bannerCookie).toEqual('true')
     })
   })
 
