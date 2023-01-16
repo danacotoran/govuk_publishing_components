@@ -9,7 +9,7 @@ describe('Intervention banner component', function () {
   beforeEach(function () {
     container = document.createElement('div')
     container.innerHTML =
-      '<section class="gem-c-intervention" data-module="intervention"><a class="govuk-link gem-c-intervention__dismiss-link">Dismiss</a></section>'
+      '<section class="gem-c-intervention" data-module="intervention" data-intervention-name="test-intervention-name"><a class="govuk-link gem-c-intervention__dismiss-link">Dismiss</a></section>'
 
     document.body.appendChild(container)
     var element = document.querySelector('[data-module="intervention"]')

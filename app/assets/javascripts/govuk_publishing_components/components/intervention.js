@@ -24,7 +24,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
 
     if (GOVUK.getCookie('cookies_policy')) {
 
-      // GOVUK.cookie(this.$bannerName, 'true')
+      GOVUK.cookie(this.$bannerName, 'true')
     }
 
     this.$module.style.display = 'none'
