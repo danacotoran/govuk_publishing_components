@@ -23,9 +23,10 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
     }
 
     if (GOVUK.getCookie('cookies_policy')) {
-      console.log(this.$bannerName)
+      // console.log(this.$bannerName)
+      console.log('Banner is closed')
       // GOVUK.cookie(this.$bannerName, 'true')
-      GOVUK.cookie('intervention_test', 'true', { days: 30 })
+      GOVUK.setCookie('intervention_test', 'true', { days: 30 })
     }
 
     this.$module.style.display = 'none'
