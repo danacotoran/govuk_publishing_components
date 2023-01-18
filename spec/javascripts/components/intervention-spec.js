@@ -19,7 +19,7 @@ describe('Intervention banner component', function () {
   })
 
   afterEach(function () {
-    GOVUK.deleteCookie('test-hide-intervention')
+    GOVUK.deleteCookie('test_intervention_name')
     document.body.removeChild(container)
   })
 
@@ -27,6 +27,8 @@ describe('Intervention banner component', function () {
     it('should hide intervention banner', function () {
       var banner = document.querySelector('.gem-c-intervention')
       var close = document.querySelector('.gem-c-intervention__dismiss-link')
+      expect(banner).toBeVisible
+
       close.click()
 
       expect(banner).toBeHidden()
@@ -38,14 +40,20 @@ describe('Intervention banner component', function () {
       close.click()
 
       expect(GOVUK.cookie).toHaveBeenCalled()
-      var bannerCookie = GOVUK.cookie('test-intervention-name')
+      var bannerCookie = GOVUK.cookie('test_intervention_name')
       expect(bannerCookie).toEqual('true')
     })
   })
 
   describe('cookies are already set', function () {
-    xit('', function () {
+    it('does not display the banner' , function () {
+      var bannerCookie = GOVUK.cookie('test_intervention_name')
+      if (bannerCookie == null) {
+        GOVUK.setCookie('test_intervention_name', 'true', { days: 1 })
+      }
+      var banner = document.querySelector('.gem-c-intervention')
 
+      expect(banner).toBeHidden()
     })
   })
 })

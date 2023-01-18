@@ -22,13 +22,15 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
       event.preventDefault()
     }
 
-    if (GOVUK.getCookie('cookies_policy')) {
-      // console.log(this.$bannerName)
-      console.log('Banner is closed')
-      // GOVUK.cookie(this.$bannerName, 'true')
-      GOVUK.setCookie('intervention_test', 'true', { days: 30 })
+    this.$module.hideBanner()
+  }
+
+  Intervention.prototype.hideBanner = function () {
+    if (window.GOVUK.getCookie('cookies_policy')) {
+      window.GOVUK.setCookie('test_intervention_name', 'true', { days: 30 })
     }
 
+    this.$module.hidden = true
     this.$module.style.display = 'none'
   }
 
