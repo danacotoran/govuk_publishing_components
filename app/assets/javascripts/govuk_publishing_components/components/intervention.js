@@ -22,7 +22,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
       event.preventDefault()
     }
 
-    this.$module.hideBanner()
+    this.hideBanner()
   }
 
   Intervention.prototype.hideBanner = function () {
