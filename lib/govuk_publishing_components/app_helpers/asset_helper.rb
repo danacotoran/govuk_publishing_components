@@ -4,82 +4,10 @@ module GovukPublishingComponents
       # This is a list of all the components that have stylesheets - so a new
       # component needs to be added to this list rather than being laboriously
       # added and removed from every single rendering application.
-      COMPONENT_CSS_PATHS = %w[
-        accordion
-        action-link
-        attachment
-        attachment-link
-        back-link
-        big-number
-        breadcrumbs
-        button
-        cards
-        character-count
-        checkboxes
-        contents-list
-        contextual-guidance
-        contextual-sidebar
-        cookie-banner
-        copy-to-clipboard
-        date-input
-        details
-        devolved-nations
-        document-list
-        emergency-banner
-        error-alert
-        error-message
-        error-summary
-        feedback
-        fieldset
-        file-upload
-        govspeak
-        govspeak-html-publication
-        heading
-        hint
-        image-card
-        input
-        inset-text
-        intervention
-        inverse-header
-        label
-        layout-footer
-        layout-for-admin
-        layout-for-public
-        layout-header
-        layout-super-navigation-header
-        lead-paragraph
-        metadata
-        modal-dialogue
-        notice
-        organisation-logo
-        panel
-        phase-banner
-        previous-and-next-navigation
-        print-link
-        radio
-        related-navigation
-        reorderable-list
-        search
-        select
-        share-links
-        show-password
-        signup-link
-        single-page-notification-button
-        skip-link
-        step-by-step-nav
-        step-by-step-nav-header
-        step-by-step-nav-related
-        subscription-links
-        success-alert
-        summary-list
-        table
-        tabs
-        textarea
-        title
-        translation-nav
-        warning-text
-      ].map { |component|
-        "govuk_publishing_components/components/_#{component}.css"
+      COMPONENT_CSS_PATHS = Dir.glob("#{GovukPublishingComponents::Config.gem_directory}/app/assets/stylesheets/govuk_publishing_components/components/_*.scss").map { |path|
+        filename = path.split("/").last
+        component_name = filename.sub("_", "").sub(".scss", "")
+        "govuk_publishing_components/components/_#{component_name}.css"
       }.freeze
 
       def initialize
