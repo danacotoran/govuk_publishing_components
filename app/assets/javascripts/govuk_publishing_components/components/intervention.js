@@ -15,6 +15,10 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
     if (this.$closeLink) {
       this.$closeLink.addEventListener('click', this.$module.close)
     }
+
+    if (this.checkCookies()) {
+      this.hideBanner()
+    }
   }
 
   Intervention.prototype.handleClose = function (event) {
@@ -25,9 +29,19 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
     this.hideBanner()
   }
 
-  Intervention.prototype.hideBanner = function () {
+  Intervention.prototype.checkCookies = function () {
+    return !!(window.GOVUK.getCookie('cookies_policy') && (window.GOVUK.cookie('test_intervention_name')))
+  }
+
+  Intervention.prototype.setCookies = function () {
     if (window.GOVUK.getCookie('cookies_policy')) {
       window.GOVUK.setCookie('test_intervention_name', 'true', { days: 30 })
+    }
+  }
+
+  Intervention.prototype.hideBanner = function () {
+    if (!this.checkCookies()) {
+      this.setCookies()
     }
 
     this.$module.hidden = true
